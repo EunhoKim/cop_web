@@ -1,7 +1,7 @@
 # cop_react 
   
 
-# React-Codelab-Project 프로젝트 공부중
+# React-Codelab-Project Study
 
 ## About
 
