@@ -96,7 +96,7 @@ export function registerFailure(error) {
 export function getStatusRequest() {
     return (dispatch) => {
         dispatch(getStatus());
-        return axios.get('/api/account/getinfo')
+        return axios.get('/local/account/getinfo')
         .then((response) => {
             dispatch(getStatusSuccess(response.data.info.username));
         }).catch((error) => {
