@@ -22,7 +22,7 @@ export function memoPostRequest(contents) {
     return (dispatch) => {
         dispatch(memoPost());
 
-        return axios.post('/api/memo/', { contents })
+        return axios.post('/local/memo/', { contents })
         .then((response) => {
             dispatch(memoPostSuccess());
         }).catch((error) => {
@@ -64,7 +64,7 @@ export function memoListRequest(isInitial, listType, id, username) {
         // to be implemented
         dispatch(memoList());
 
-        let url = '/api/memo';
+        let url = '/local/memo';
 
         if(typeof username === "undefined") {
             // username not given, load public memo
@@ -110,7 +110,7 @@ export function memoEditRequest(id, index, contents) {
     return (dispatch) => {
         dispatch(memoEdit());
 
-        return axios.put('/api/memo/' + id, { contents })
+        return axios.put('/local/memo/' + id, { contents })
         .then((response) => {
             dispatch(memoEditSuccess(index, response.data.memo));
         }).catch((error) => {
@@ -146,7 +146,7 @@ export function memoRemoveRequest(id, index) {
         // TO BE IMPLEMENTED
         dispatch(memoRemove());
 
-        return axios.delete('/api/memo/' + id)
+        return axios.delete('/local/memo/' + id)
         .then((response)=> {
             dispatch(memoRemoveSuccess(index));
         }).catch((error) => {
@@ -181,7 +181,7 @@ export function memoStarRequest(id, index) {
     return (dispatch) => {
         dispatch(memoStar());
 
-        return axios.post('/api/memo/star/' + id)
+        return axios.post('/local/memo/star/' + id)
         .then((response) => {
             dispatch(memoStarSuccess(index, response.data.memo));
         }).catch((error) => {
