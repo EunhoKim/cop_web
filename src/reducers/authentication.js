@@ -19,7 +19,7 @@ const initialState = {
 
 export default function authentication(state, action) {
 	
-	console.log("==========authentication : " + state + " ,action :" + action );
+	console.log("==========authentication : " + state + " ,action :" + action.type );
     if(typeof state === "undefined") {
         state = initialState;
     }
