@@ -128,7 +128,7 @@ export function getStatusFailure() {
 /* LOGOUT */
 export function logoutRequest() {
     return (dispatch) => {
-        return axios.post('/api/account/logout')
+        return axios.post('/local/account/logout')
         .then((response) => {
             dispatch(logout());
         });
