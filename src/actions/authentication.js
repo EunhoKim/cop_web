@@ -16,13 +16,21 @@ import axios from 'axios';
 
 /* LOGIN */
 export function loginRequest(username, password) {
+	const config = { headers: { 'Content-Type': 'multipart/form-data' } };
+    var formData = new FormData();
+    formData.append('id',username);
+    formData.append('passwd',password);
 	console.log("loginRequest ==========username : " + username );
     return (dispatch) => {
             dispatch(login());
             
-            return axios.post('/login', { username, password })
+            return axios.post('/api/login',  formData , config)
             .then((response) => {
-                dispatch(loginSuccess(username));
+            	if(response.data.errorcode == '0000'){
+            		dispatch(loginSuccess(username));
+            	}else{
+                    dispatch(loginFailure());
+                }
             }).catch((error) => {
             	console.log("loginRequest ==========error : " + error );
                 dispatch(loginFailure());
@@ -55,7 +63,7 @@ export function registerRequest(username, password) {
         // inform register API is starting
         dispatch(register());
 
-        return axios.post('/api/account/signup', { username, password })
+        return axios.post('/api/registUser', { username, password })
         .then((reponse) => {
             dispatch(registerSuccess());
         }).catch((error) => {

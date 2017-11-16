@@ -22,7 +22,9 @@ module.exports = {
         publicPath: '/',
         historyApiFallback: true,
         contentBase: './public',
+        disableHostCheck: true,
         host: '0.0.0.0',
+        headers: { 'Access-Control-Allow-Origin': '*'} ,
         proxy: {
             "*": "http://localhost:3000"
         },

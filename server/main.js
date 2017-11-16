@@ -10,7 +10,7 @@ import bodyParser from 'body-parser'; // PARSE HTML BODY
 import mongoose from 'mongoose';
 import session from 'express-session';
 
-import api from './routes';
+import local from './routes';
 
 
 const app = express();
@@ -25,7 +25,7 @@ const db = mongoose.connection;
 db.on('error', console.error);
 db.once('open', () => { console.log('Connected to mongodb server'); });
 // mongoose.connect('mongodb://username:password@host:port/database=');
-mongoose.connect('mongodb://172.31.40.181/cop');
+mongoose.connect('mongodb://localhost/cop');
 
 /* use session */
 app.use(session({
@@ -37,7 +37,7 @@ app.use(session({
 app.use('/', express.static(path.join(__dirname, './../public')));
 
 /* setup routers & static directory */
-app.use('/api', api);
+app.use('/local', local);
 
 app.all(/^\/api\/(.*)/, (req, res) => {
     proxy.web(req, res, { target: 'http://13.59.68.33:5000' });
@@ -53,7 +53,7 @@ app.use(function(err, req, res, next) {
   res.status(500).send('Something broke!');
 });
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log('Express is listening on port', port);
 });
 
@@ -63,7 +63,7 @@ if(process.env.NODE_ENV == 'development') {
     const compiler = webpack(config);
     const devServer = new WebpackDevServer(compiler, config.devServer);
     devServer.listen(
-        devPort, () => {
+        devPort, '0.0.0.0', () => {
             console.log('webpack-dev-server is listening on port', devPort);
         }
     );
