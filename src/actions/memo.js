@@ -26,7 +26,7 @@ export function memoPostRequest(contents) {
         .then((response) => {
             dispatch(memoPostSuccess());
         }).catch((error) => {
-            dispatch(memoPostError(error.response.data.code));
+            dispatch(memoPostFailure(error.response.data.code));
         });
     };
 }
