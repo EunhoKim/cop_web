@@ -160,7 +160,7 @@ Authentication.propTypes = {
 Authentication.defaultProps = {
     mode: true,
     onLogin: (id, pw) => { console.error("onLogin not defined"); },
-    onRegister: (id, pw) => { console.error("onRegister not defined"); }
+    onRegister: (id, pw, name) => { console.error("onRegister not defined"); }
 };
 
 export default Authentication;
