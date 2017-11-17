@@ -31,7 +31,7 @@ class Login extends React.Component {
                     return true;
                 } else {
                 	console.log("==========err  ");
-                    let $toastContent = $('<span style="color: #FFB4BA">Incorrect username or password</span>');
+                    let $toastContent = $('<span style="color: #FFB4BA">Incorrect UserID or password</span>');
                     Materialize.toast($toastContent, 2000);
                     return false;
                 }

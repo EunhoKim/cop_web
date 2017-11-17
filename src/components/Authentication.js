@@ -6,8 +6,9 @@ class Authentication extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: "",
-            password: ""
+        	username: "",
+            password: "",
+            userRealName:""
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleLogin = this.handleLogin.bind(this);
@@ -43,8 +44,9 @@ class Authentication extends React.Component {
     handleRegister() {
         let id = this.state.username;
         let pw = this.state.password;
+        let name = this.state.userRealName;
 
-        this.props.onRegister(id, pw).then(
+        this.props.onRegister(id, pw,name).then(
             (success) => {
                 if(!success) {
                     this.setState({
@@ -69,7 +71,7 @@ class Authentication extends React.Component {
         const inputBoxes = (
             <div>
                 <div className="input-field col s12 username">
-                    <label>Username</label>
+                    <label>UserID</label>
                     <input
                     name="username"
                     type="text"
@@ -113,12 +115,21 @@ class Authentication extends React.Component {
         );
 
         const registerView = (
-           <div className="card-content">
+        	<div className="input-field col s12 username">
+                <label>Username</label>
+                <input
+                name="userRealName"
+                type="text"
+                className="validate"
+                value={this.state.userRealName}
+                />
+            </div>
+            <div className="card-content">
                <div className="row">
                    { inputBoxes }
                    <a onClick={this.handleRegister} className="waves-effect waves-light btn">CREATE</a>
                </div>
-           </div>
+            </div>
        );
 
         return(

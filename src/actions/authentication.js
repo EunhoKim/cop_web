@@ -22,7 +22,7 @@ export function loginRequest(username, password) {
     var formData = new FormData();
     formData.append('id',username);
     formData.append('passwd',password);
-	console.log("loginRequest ==========username : " + username );
+	console.log("loginRequest ==========userid : " + username );
     return (dispatch) => {
             dispatch(login());
             
@@ -60,12 +60,17 @@ export function loginFailure() {
 }
 
 /* REGISTER */
-export function registerRequest(username, password) {
+export function registerRequest(username,password,userRealname) {
+	const config = { headers: { 'Content-Type': 'multipart/form-data' } };
+    var formData = new FormData();
+    formData.append('id',username);
+    formData.append('passwd',password);
+    formData.append('name',userRealname);
     return (dispatch) => {
         // inform register API is starting
         dispatch(register());
-
-        return axios.post('/api/registUser', { username, password })
+        
+        return axios.post('/api/registUser',formData , config)
         .then((reponse) => {
             dispatch(registerSuccess());
         }).catch((error) => {
