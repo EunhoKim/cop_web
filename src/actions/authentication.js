@@ -76,7 +76,7 @@ export function registerRequest(username,password,userRealname) {
         dispatch(register());
         
         return axios.post('/api/registUser',formData , config)
-        .then((reponse) => {
+        .then((response) => {
         	console.log("response.data.errorcode == " + response.data.errorcode);
         	if(response.data.errorcode == '0000'){
         		dispatch(registerSuccess());
