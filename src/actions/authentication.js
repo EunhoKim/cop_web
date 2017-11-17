@@ -16,6 +16,8 @@ import axios from 'axios';
 
 /* LOGIN */
 export function loginRequest(username, password) {
+	console.log("actions==========loginRequest " );
+	
 	const config = { headers: { 'Content-Type': 'multipart/form-data' } };
     var formData = new FormData();
     formData.append('id',username);

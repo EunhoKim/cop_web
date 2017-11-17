@@ -11,7 +11,7 @@ import {
 
 
 class Home extends React.Component {
-
+	console.log("containers==========Home ");
     constructor(props) {
         super(props);
         this.handlePost = this.handlePost.bind(this);

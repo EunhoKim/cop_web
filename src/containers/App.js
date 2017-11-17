@@ -5,7 +5,7 @@ import { getStatusRequest, logoutRequest } from 'actions/authentication';
 import { searchRequest } from 'actions/search';
 
 class App extends React.Component {
-
+	console.log("containers==========App ");
     constructor(props) {
         super(props);
         this.handleLogout = this.handleLogout.bind(this);

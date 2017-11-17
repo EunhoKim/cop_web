@@ -6,6 +6,8 @@ import {
 import axios from 'axios';
 
 export function searchRequest(keyword) {
+	console.log("actions==========searchRequest " );
+	
     return (dispatch) => {
 
         dispatch(search());

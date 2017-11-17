@@ -12,6 +12,8 @@ const router = express.Router();
         2: EMPTY CONTENTS
 */
 router.post('/', (req, res) => {
+	console.log("routes==========memo.js " );
+	
     // CHECK LOGIN STATUS
     if(typeof req.session.loginInfo === 'undefined') {
         return res.status(403).json({

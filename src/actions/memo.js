@@ -19,13 +19,15 @@ import axios from 'axios';
 
 /* MEMO POST */
 export function memoPostRequest(contents) {
+	console.log("actions==========memoPostRequest " );
     return (dispatch) => {
         dispatch(memoPost());
-
+        console.log("contents : " + contents);
         return axios.post('/local/memo/', { contents })
         .then((response) => {
             dispatch(memoPostSuccess());
         }).catch((error) => {
+        	console.log("error : " + error);
             dispatch(memoPostFailure(error.response.data.code));
         });
     };

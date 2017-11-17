@@ -6,7 +6,7 @@ import { browserHistory } from 'react-router';
 
 
 class Login extends React.Component {
-
+	console.log("containers==========Login ");
     constructor(props) {
         super(props);
         this.handleLogin = this.handleLogin.bind(this);

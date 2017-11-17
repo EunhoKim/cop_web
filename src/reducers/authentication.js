@@ -19,7 +19,7 @@ const initialState = {
 
 export default function authentication(state, action) {
 	
-	console.log("==========authentication : " + state + " ,action :" + action.type );
+	console.log("reducers==========authentication : " + state + " ,action :" + action.type );
     if(typeof state === "undefined") {
         state = initialState;
     }
@@ -103,6 +103,7 @@ export default function authentication(state, action) {
                 }
             });
         default:
+        	state = initialState;
             return state;
     }
 }

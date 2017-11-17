@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class Authentication extends React.Component {
-
+	console.log("components==========Authentication " );
     constructor(props) {
         super(props);
         this.state = {

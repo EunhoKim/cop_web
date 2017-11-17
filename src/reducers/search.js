@@ -7,6 +7,7 @@ const initialState = {
 };
 
 export default function search(state, action) {
+	console.log("reducers==========search : " + state + " ,action :" + action.type );
     if(typeof state === "undefined")
         state = initialState;
 

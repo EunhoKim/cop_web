@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Write extends React.Component {
-
+	console.log("components==========Write " );
     constructor(props) {
         super(props);
         this.state = {
