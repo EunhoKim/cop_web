@@ -20,7 +20,6 @@ class Authentication extends React.Component {
     handleChange(e) {
         let nextState = {};
         nextState[e.target.name] = e.target.value;
-        console.log("e.target.value : " + e.target.value);
         this.setState(nextState);
     }
 
