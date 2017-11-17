@@ -61,13 +61,15 @@ export function loginFailure() {
 
 /* REGISTER */
 export function registerRequest(username,password,userRealname) {
+	
+	console.log("userRealname == " + userRealname);
+	
+	
 	const config = { headers: { 'Content-Type': 'multipart/form-data' } };
     var formData = new FormData();
     formData.append('id',username);
     formData.append('passwd',password);
     formData.append('name',userRealname);
-    
-    console.log("userRealname == " + userRealname);
     
     return (dispatch) => {
         // inform register API is starting
