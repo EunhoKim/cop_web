@@ -93,6 +93,7 @@ export function registerRequest(username,password,userRealname) {
 }
 
 export function register() {
+	console.log("register == ");
     return {
         type: AUTH_REGISTER
     };
