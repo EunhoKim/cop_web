@@ -7,7 +7,7 @@ class MemoList extends React.Component {
     shouldComponentUpdate(nextProps, nextState) {
     	console.log("components==========MemoList " );
         let update = JSON.stringify(this.props) !== JSON.stringify(nextProps);
-        console.log("components==========MemoList " + update );
+        console.log("components==========MemoList " + JSON.stringify(this.props) + '== ' +  JSON.stringify(nextProps));
         return update;
     }
 
