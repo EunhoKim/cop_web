@@ -98,6 +98,7 @@ class Authentication extends React.Component {
 		               type="text"
 		               className="validate"
 		               value={this.state.userRealName}
+		               onChange={this.handleChange}
 		               />
 		           </div>
                }
