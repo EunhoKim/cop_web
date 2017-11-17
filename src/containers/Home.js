@@ -31,7 +31,7 @@ class Home extends React.Component {
         const loadMemoLoop = () => {
             this.loadNewMemo().then(
                 () => {
-                    this.memoLoaderTimeoutId = setTimeout(loadMemoLoop, 5000);
+                    //this.memoLoaderTimeoutId = setTimeout(loadMemoLoop, 5000);
                 }
             );
         };
