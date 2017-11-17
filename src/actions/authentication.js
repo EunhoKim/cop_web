@@ -29,6 +29,15 @@ export function loginRequest(username, password) {
             return axios.post('/api/login',  formData , config)
             .then((response) => {
             	if(response.data.errorcode == '0000'){
+            		
+            		axios.post('/local/account/loginSession',  formData , config)
+                    .then((response) => {
+                    	console.log("=====================================success");
+                    }).catch((error) => {
+                    	console.log("loginRequest ==========error : " + error );
+                        //dispatch(loginFailure());
+                    });
+            		
             		dispatch(loginSuccess(username));
             	}else{
                     dispatch(loginFailure());

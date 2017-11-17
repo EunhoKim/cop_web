@@ -148,4 +148,18 @@ router.get('/search', (req, res) => {
     res.json([]);
 });
 
+
+router.get('/loginSession', (req, res) => {
+	// ALTER SESSION
+    let session = req.session;
+    console.log(" ========================== " +req.body.username);
+    session.loginInfo = {
+        username: req.body.username
+    };
+    
+    // RETURN SUCCESS
+    return res.json({
+        success: true
+    });
+});
 export default router;
