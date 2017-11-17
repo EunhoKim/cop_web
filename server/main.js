@@ -11,7 +11,8 @@ import mongoose from 'mongoose';
 import session from 'express-session';
 
 import local from './routes';
-
+const httpProxy = require('http-proxy');
+const proxy = httpProxy.createProxyServer({});
 
 const app = express();
 const port = 3000;
