@@ -85,7 +85,9 @@ export function registerRequest(username,password,userRealname) {
         		dispatch(registerFailure(response.data.errorcode));
         	}
         }).catch((error) => {
-            dispatch(registerFailure(error.response.data.code));
+            //dispatch(registerFailure(error.response.data.code));
+        	console.error("registerRequest ==================" + error);
+        	dispatch(registerFailure());
         });
     };
 }
@@ -102,10 +104,9 @@ export function registerSuccess() {
     };
 }
 
-export function registerFailure(error) {
+export function registerFailure() {
     return {
-        type: AUTH_REGISTER_FAILURE,
-        error
+        type: AUTH_REGISTER_FAILURE
     };
 }
 
