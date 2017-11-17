@@ -6,8 +6,7 @@ const initialState = {
         status: 'INIT'
     },
     register: {
-        status: 'INIT',
-        error: -1
+        status: 'INIT'
     },
     status: {
         valid: false,
@@ -52,10 +51,10 @@ export default function authentication(state, action) {
 
         /* REGISTER */
         case types.AUTH_REGISTER:
+        	console.log("========== AUTH_REGISTER ");
             return update(state, {
                 register: {
-                    status: { $set: 'WAITING' },
-                    error: { $set: -1}
+                    status: { $set: 'WAITING' }
                 }
             });
         case types.AUTH_REGISTER_SUCCESS:
