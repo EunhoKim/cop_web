@@ -90,6 +90,17 @@ class Authentication extends React.Component {
                     onChange={this.handleChange}
                     onKeyPress={this.handleKeyPress}/>
                 </div>
+               {this.props.mode ? "" :
+            	   <div className="input-field col s12">
+		               <label>Username</label>
+		               <input
+		               name="userRealName"
+		               type="text"
+		               className="validate"
+		               value={this.state.userRealName}
+		               />
+		           </div>
+               }
             </div>
         );
 
@@ -115,22 +126,11 @@ class Authentication extends React.Component {
         );
 
         const registerView = (
-        	<div>
-	        	<div className="input-field col s12">
-	                <label>Username</label>
-	                <input
-	                name="userRealName"
-	                type="text"
-	                className="validate"
-	                value={this.state.userRealName}
-	                />
-	            </div>
-	            <div className="card-content">
-	               <div className="row">
-	                   { inputBoxes }
-	                   <a onClick={this.handleRegister} className="waves-effect waves-light btn">CREATE</a>
-	               </div>
-	            </div>
+            <div className="card-content">
+               <div className="row">
+                   { inputBoxes }
+                   <a onClick={this.handleRegister} className="waves-effect waves-light btn">CREATE</a>
+               </div>
             </div>
        );
 
