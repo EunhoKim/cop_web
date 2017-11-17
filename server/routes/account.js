@@ -149,7 +149,7 @@ router.get('/search', (req, res) => {
 });
 
 
-router.get('/loginSession', (req, res) => {
+router.post('/loginSession', (req, res) => {
 	// ALTER SESSION
     let session = req.session;
     console.log(" ========================== " +req.body.username);
