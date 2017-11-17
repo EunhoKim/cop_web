@@ -116,7 +116,7 @@ class Authentication extends React.Component {
 
         const registerView = (
         	<div>
-	        	<div className="input-field col s12 username">
+	        	<div className="input-field col s12">
 	                <label>Username</label>
 	                <input
 	                name="userRealName"
