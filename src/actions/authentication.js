@@ -128,6 +128,7 @@ export function getStatusRequest() {
         dispatch(getStatus());
         return axios.get('/local/account/getinfo')
         .then((response) => {
+        	console.log("===================response.data.info.username " + response.data.info.username);
             dispatch(getStatusSuccess(response.data.info.username));
         }).catch((error) => {
             dispatch(getStatusFailure());
