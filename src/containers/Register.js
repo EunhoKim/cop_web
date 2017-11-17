@@ -5,10 +5,11 @@ import { registerRequest } from 'actions/authentication';
 import { browserHistory } from 'react-router';
 
 class Register extends React.Component {
-	console.log("containers==========Register ");
+	
     constructor(props) {
         super(props);
         this.handleRegister = this.handleRegister.bind(this);
+        console.log("containers==========Register ");
     }
 
     handleRegister(id, pw) {
