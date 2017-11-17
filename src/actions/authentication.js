@@ -66,6 +66,9 @@ export function registerRequest(username,password,userRealname) {
     formData.append('id',username);
     formData.append('passwd',password);
     formData.append('name',userRealname);
+    
+    console.log("userRealname == " + userRealname);
+    
     return (dispatch) => {
         // inform register API is starting
         dispatch(register());
