@@ -12,8 +12,8 @@ class Register extends React.Component {
         console.log("containers==========Register ");
     }
 
-    handleRegister(id, pw) {
-        return this.props.registerRequest(id, pw).then(
+    handleRegister(id, pw, name) {
+        return this.props.registerRequest(id, pw, name).then(
             () => {
                 if(this.props.status === "SUCCESS") {
                     Materialize.toast('Success! Please log in', 2000);
@@ -57,8 +57,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        registerRequest: (id, pw) => {
-            return dispatch(registerRequest(id,pw));
+        registerRequest: (id, pw, name) => {
+            return dispatch(registerRequest(id,pw,name));
         }
     };
 };
