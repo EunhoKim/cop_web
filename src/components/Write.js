@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Write extends React.Component {
-	console.log("components==========Write " );
+	
     constructor(props) {
         super(props);
         this.state = {
@@ -9,6 +9,7 @@ class Write extends React.Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.handlePost = this.handlePost.bind(this);
+        console.log("components==========Write " );
     }
 
     handleChange(e) {

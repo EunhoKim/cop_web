@@ -2,7 +2,7 @@ import React from 'react';
 import { browserHistory, Link } from 'react-router';
 
 class Search extends React.Component {
-	console.log("components==========Search " );
+	
     constructor(props) {
         super(props);
 
@@ -24,7 +24,7 @@ class Search extends React.Component {
         };
 
         document.onkeydown = listenEscKey;
-
+        console.log("components==========Search " );
     }
 
     handleClose() {

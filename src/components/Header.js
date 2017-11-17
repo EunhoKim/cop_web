@@ -4,7 +4,7 @@ import { Search } from 'components';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class Header extends React.Component {
-	console.log("components==========Header " );
+	
     constructor(props) {
         super(props);
 
@@ -15,6 +15,7 @@ class Header extends React.Component {
         };
 
         this.toggleSearch = this.toggleSearch.bind(this);
+        console.log("components==========Header " );
     }
 
     toggleSearch() {

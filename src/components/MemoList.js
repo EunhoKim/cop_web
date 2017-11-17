@@ -3,8 +3,9 @@ import { Memo } from 'components';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class MemoList extends React.Component {
-	console.log("components==========MemoList " );
+	
     shouldComponentUpdate(nextProps, nextState) {
+    	console.log("components==========MemoList " );
         let update = JSON.stringify(this.props) !== JSON.stringify(nextProps);
         return update;
     }

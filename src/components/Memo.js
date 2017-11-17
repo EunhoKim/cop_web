@@ -3,7 +3,7 @@ import TimeAgo from 'react-timeago';
 import { Link } from 'react-router';
 
 class Memo extends React.Component {
-	console.log("components==========Memo " );
+	
     constructor(props) {
         super(props);
         this.state = {
@@ -14,6 +14,7 @@ class Memo extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleRemove = this.handleRemove.bind(this);
         this.handleStar = this.handleStar.bind(this);
+        console.log("components==========Memo " );
     }
 
     componentDidMount() {
