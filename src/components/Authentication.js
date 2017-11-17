@@ -115,20 +115,22 @@ class Authentication extends React.Component {
         );
 
         const registerView = (
-        	<div className="input-field col s12 username">
-                <label>Username</label>
-                <input
-                name="userRealName"
-                type="text"
-                className="validate"
-                value={this.state.userRealName}
-                />
-            </div>
-            <div className="card-content">
-               <div className="row">
-                   { inputBoxes }
-                   <a onClick={this.handleRegister} className="waves-effect waves-light btn">CREATE</a>
-               </div>
+        	<div>
+	        	<div className="input-field col s12 username">
+	                <label>Username</label>
+	                <input
+	                name="userRealName"
+	                type="text"
+	                className="validate"
+	                value={this.state.userRealName}
+	                />
+	            </div>
+	            <div className="card-content">
+	               <div className="row">
+	                   { inputBoxes }
+	                   <a onClick={this.handleRegister} className="waves-effect waves-light btn">CREATE</a>
+	               </div>
+	            </div>
             </div>
        );
 
