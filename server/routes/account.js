@@ -148,7 +148,6 @@ router.get('/search', (req, res) => {
     res.json([]);
 });
 
-
 router.post('/loginSession', (req, res) => {
 	// ALTER SESSION
     let session = req.session;
