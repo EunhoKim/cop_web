@@ -30,7 +30,7 @@ export default function memo(state, action) {
 	console.log("reducers==========memo : " + state + " ,action :" + action.type );
     if(typeof state === "undefined") {
         state = initialState;
-    }`
+    }
 
     switch(action.type) {
         /* MEMO_POST */
