@@ -26,7 +26,6 @@ export default function authentication(state, action) {
     switch(action.type) {
         /* LOGIN */
         case types.AUTH_LOGIN:
-        	console.log("========== AUTH_LOGIN ");
             return update(state, {
                 login: {
                     status: { $set: 'WAITING '}
@@ -51,7 +50,6 @@ export default function authentication(state, action) {
 
         /* REGISTER */
         case types.AUTH_REGISTER:
-        	console.log("========== AUTH_REGISTER ");
             return update(state, {
                 register: {
                     status: { $set: 'WAITING' }
@@ -102,7 +100,6 @@ export default function authentication(state, action) {
                 }
             });
         default:
-        	state = initialState;
             return state;
     }
 }

@@ -15,7 +15,7 @@ const httpProxy = require('http-proxy');
 const proxy = httpProxy.createProxyServer({});
 
 const app = express();
-const port = 3000;
+const port = 80;
 const devPort = 4000;
 
 app.use(morgan('dev'));
@@ -27,11 +27,11 @@ db.on('error', console.error);
 db.once('open', () => { console.log('Connected to mongodb server'); });
 // mongoose.connect('mongodb://username:password@host:port/database=');
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost/cop',{useMongoClient:true});
+mongoose.connect('mongodb://18.221.127.168/cop',{useMongoClient:true});
 
 /* use session */
 app.use(session({
-    secret: 'CodeLab1$1$234',
+    secret: 'cop_web1$1$234',
     resave: false,
     saveUninitialized: true
 }));

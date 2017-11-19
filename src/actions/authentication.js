@@ -22,7 +22,6 @@ export function loginRequest(username, password) {
     var formData = new FormData();
     formData.append('id',username);
     formData.append('passwd',password);
-	console.log("loginRequest ==========userid : " + username );
     return (dispatch) => {
             dispatch(login());
             
@@ -30,9 +29,9 @@ export function loginRequest(username, password) {
             .then((response) => {
             	if(response.data.errorcode == '0000'){
             		
-            		axios.post('/local/account/loginSession',  formData , config)
+            		axios.post('/local/account/loginSession',  {id:username})
                     .then((response) => {
-                    	console.log("=====================================success");
+                    	console.log(" loginSEssion success");
                     }).catch((error) => {
                     	console.log("loginRequest ==========error : " + error );
                         //dispatch(loginFailure());
@@ -43,7 +42,6 @@ export function loginRequest(username, password) {
                     dispatch(loginFailure());
                 }
             }).catch((error) => {
-            	console.log("loginRequest ==========error : " + error );
                 dispatch(loginFailure());
             });
     };
@@ -128,7 +126,6 @@ export function getStatusRequest() {
         dispatch(getStatus());
         return axios.get('/local/account/getinfo')
         .then((response) => {
-        	console.log("===================response.data.info.username " + response.data.info.username);
             dispatch(getStatusSuccess(response.data.info.username));
         }).catch((error) => {
             dispatch(getStatusFailure());

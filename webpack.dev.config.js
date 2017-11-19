@@ -26,7 +26,7 @@ module.exports = {
         host: '0.0.0.0',
         headers: { 'Access-Control-Allow-Origin': '*'} ,
         proxy: {
-            "*": "http://localhost:3000"
+            "*": "http://localhost:80"
         },
         stats: {
           // Config for minimal console.log mess.

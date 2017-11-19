@@ -3,8 +3,7 @@ import update from 'react-addons-update';
 
 const initialState = {
     post: {
-        status: 'INIT',
-        error: -1
+        status: 'INIT'
     },
     list: {
         status: 'INIT',
@@ -37,8 +36,7 @@ export default function memo(state, action) {
         case types.MEMO_POST:
             return update(state, {
                 post: {
-                    status: { $set: 'WAITING' },
-                    error: { $set: -1 }
+                    status: { $set: 'WAITING' }
                 }
             });
         case types.MEMO_POST_SUCCESS:

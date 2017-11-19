@@ -12,7 +12,7 @@ const router = express.Router();
         2: EMPTY CONTENTS
 */
 router.post('/', (req, res) => {
-	console.log("routes==========memo.js " );
+	console.log("routes==========memo.js post" );
 	
     // CHECK LOGIN STATUS
     if(typeof req.session.loginInfo === 'undefined') {
@@ -42,10 +42,11 @@ router.post('/', (req, res) => {
         writer: req.session.loginInfo.username,
         contents: req.body.contents
     });
-
+    console.log("--- writer" + memo.writer);
     // SAVE IN DATABASE
     memo.save( err => {
         if(err) throw err;
+        console.log("error ----> " + err);
         return res.json({ success: true });
     });
 });

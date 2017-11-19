@@ -31,7 +31,7 @@ class Home extends React.Component {
         const loadMemoLoop = () => {
             this.loadNewMemo().then(
                 () => {
-                    //this.memoLoaderTimeoutId = setTimeout(loadMemoLoop, 5000);
+                    this.memoLoaderTimeoutId = setTimeout(loadMemoLoop, 5000);
                 }
             );
         };
@@ -139,7 +139,7 @@ class Home extends React.Component {
     }
 
     handlePost(contents) {
-        return this.props.memoPostRequest(contents).then(
+    	return this.props.memoPostRequest(contents).then(
             () => {
                 if(this.props.postStatus.status === "SUCCESS") {
                     // TRIGGER LOAD NEW MEMO
@@ -332,7 +332,7 @@ Home.defaultProps = {
 };
 
 const mapStateToProps = (state) => {
-    return {
+	return {
         isLoggedIn: state.authentication.status.isLoggedIn,
         postStatus: state.memo.post,
         currentUser: state.authentication.status.currentUser,

@@ -14,8 +14,6 @@ class Login extends React.Component {
     }
 
     handleLogin(id, pw) {
-    	console.log("==========id : " + id);
-    	
         return this.props.loginRequest(id, pw).then(
             () => {
                 if(this.props.status === "SUCCESS") {
@@ -30,7 +28,6 @@ class Login extends React.Component {
                     browserHistory.push('/');
                     return true;
                 } else {
-                	console.log("==========err  ");
                     let $toastContent = $('<span style="color: #FFB4BA">Incorrect UserID or password</span>');
                     Materialize.toast($toastContent, 2000);
                     return false;
