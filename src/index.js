@@ -14,8 +14,8 @@ import configureStore from './store/configureStore';
 import reducers from 'reducers';
 import thunk from 'redux-thunk';
 
-require('expose?$!expose?jQuery!jquery');
-require('bootstrap-webpack');
+//require('expose?$!expose?jQuery!jquery');
+//require('bootstrap-webpack');
 
 injectTapEventPlugin();
 const store = configureStore();
